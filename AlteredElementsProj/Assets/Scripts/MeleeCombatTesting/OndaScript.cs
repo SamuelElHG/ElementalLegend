@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class OndaScript : MonoBehaviour
 {
+    [SerializeField] private PlayerStats plaStats;
+
     [SerializeField] private float damage;
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,7 @@ public class OndaScript : MonoBehaviour
         if (other != null)
         {
             EnemyScript enemyScript = other.gameObject.GetComponent<EnemyScript>(); 
-            enemyScript.DamageFunction(damage);
+            enemyScript.DamageFunction(plaStats.AttackDamage);
 
         }
     }
