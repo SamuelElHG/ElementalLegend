@@ -701,6 +701,9 @@ MonoBehaviour:
   ondaAttack: {fileID: 1736678659}
   attackable: 1
   distanciaMaxima: 1
+  meteor: {fileID: 3775949504528181056, guid: 1c8133c918bc39c4381fa777e4c67c96, type: 3}
+  meteorCD: 1
+  meteorAvailable: 1
 --- !u!114 &1609068891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -845,11 +848,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99107083450f974595504eb2d683394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: 0
-  expThreshold: 100
   health: 10
   AttackDamage: 5
   Defense: 5
+  MagicDamage: 0
 --- !u!1 &1736678659 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1400896934451568908, guid: cbe120d65a91d4744a95d7d40602d6a2,

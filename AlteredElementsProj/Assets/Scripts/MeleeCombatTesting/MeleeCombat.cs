@@ -8,6 +8,12 @@ public class MeleeCombat : MonoBehaviour
     [SerializeField] private GameObject ondaAttack;
     [SerializeField] private bool attackable;
     [SerializeField] private float distanciaMaxima;
+
+    [Header("MeteorSwarm")]
+    [SerializeField] private GameObject meteor;
+    [SerializeField] private float meteorCD;
+    [SerializeField] private bool meteorAvailable = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +26,14 @@ public class MeleeCombat : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && attackable)
         {
             StartCoroutine(SpawnAttack());
+        }
+
+        if(Input.GetKeyDown(KeyCode.R)) {
+            if(meteorAvailable)
+            {
+                Debug.Log("trying meteor");
+                StartCoroutine(MeteorSwarm());
+            }
         }
     }
 
@@ -53,4 +67,12 @@ public class MeleeCombat : MonoBehaviour
         return Vector3.zero;
     }
 
+    private IEnumerator MeteorSwarm()
+    {
+        meteorAvailable = false;
+        Instantiate(meteor, transform.position + new Vector3(0,25,0), Quaternion.identity);
+        yield return new WaitForSeconds(meteorCD);
+        meteorAvailable = true;
+
+    }
 }

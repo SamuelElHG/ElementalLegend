@@ -5,9 +5,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] public int exp;
-    [SerializeField] private int expThreshold;
 
-    [SerializeField] public float health, AttackDamage, Defense ;
+    [SerializeField] public float health, AttackDamage, Defense, MagicDamage ;
 
 }
